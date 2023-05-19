@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Moon+Dance");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@700");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500");
+
+:root {
+  --text: #384a5b;
+  --orange: #f54100;
+  --background: #d1edff;
+  --primary: #4d6c87;
+  --secondary: #4c3998;
+  --accent: #ff713d;
+  --logo-font: "Moon Dance";
+  --primary-font: "Plus Jakarta Sans";
+  --header-font: Rajdhani;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: var(--primary-font), sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  display: flex;
+  background-color: var(--background);
+  color: var(--text);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  border: none;
+  background-color: inherit;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-size: 4rem;
+  font-family: var(--header-font), sans-serif;
+}
+
+.page {
+  width: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2.5ch;
+  border-bottom: 2px solid var(--text);
+  background-color: var(--background);
+  z-index: 10;
+}
+
+.logo {
+  padding: 0 4.75rem;
+  font-family: var(--logo-font), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contact {
+  color: var(--background);
+  background-color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact a {
+  padding: 1.5rem 2rem;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+section {
+  width: calc(100% - 10rem);
+  padding: 5rem;
+}
+
+hr {
+  width: 90%;
+  border: 1px solid var(--primary);
+}
+
+hr.contact-rule {
+  width: calc(100% - 2px);
+  margin: 0;
+  border-color: var(--text);
+}
+
+main p,
+main a {
+  margin-bottom: 1.5rem;
+}
+
+#about {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 25rem;
+  padding-bottom: 3rem;
+}
+
+.copy {
+  flex: 2;
+}
+
+.copy > p {
+  max-width: 50ch;
+}
+.copy a {
+  text-decoration: underline;
+}
+
+.copy a:hover {
+  color: var(--accent);
+}
+
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex: 1;
+  border-left: 2px solid var(--primary);
+  font-size: 4rem;
+}
+
+.tech-stack .icon {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-list > * {
+  width: 48%;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+  background-color: var(--text);
+  color: var(--background);
+}
+
+#contact > form {
+  display: flex;
+}
+
+#contact > form > * {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact > form input[type="submit"] {
+  background-color: var(--secondary);
+  color: var(--background);
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  border-top: 2px solid var(--text);
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  border-bottom-left-radius: 999px;
+  border-bottom-right-radius: 999px;
+  padding: 0 0.625em;
+  background-color: var(--text);
+  color: var(--background);
+  font-size: 1.625rem;
 }

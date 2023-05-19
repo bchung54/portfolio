@@ -1,0 +1,42 @@
+menu {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 2.5rem);
+  width: 5%;
+  max-width: 4.5em;
+  border-right: 2px solid var(--text);
+  padding: 1.25rem 0;
+  transition: width 1s ease-in-out, max-width 1s ease-in-out;
+}
+
+menu.active {
+  width: 15.5rem;
+  max-width: 15.5rem;
+}
+
+menu > .media {
+  display: flex;
+  flex-direction: column;
+}
+
+menu .icon {
+  margin: 0.5rem 0;
+  color: var(--slate-blue);
+}
+
+.menu {
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.media {
+  font-size: 1.25rem;
+}
+
+.nav.hidden {
+  display: none;
+}

@@ -6,22 +6,24 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,css,scss}\"",
+    "coverage": "npm test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{js,jsx} --collectCoverageFrom='!src/components/**/*.{types,stories,constants,test,spec}.{js,jsx}'",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -33,6 +35,32 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8",
+    "react-scripts": "5.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": [
+      "prettier --write"
     ]
   }
 }

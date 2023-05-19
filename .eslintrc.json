@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "react-app",
+    "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-param-reassign": [2, { "props": false }],
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": ["warn", { "custom": "ignore" }],
+    "import/prefer-default-export": "off",
+    "import/default": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"],
+        "paths": ["src"]
+      }
+    }
+  }
+}

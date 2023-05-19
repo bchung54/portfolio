@@ -1,0 +1,56 @@
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  border: 1px solid var(--text);
+}
+
+.project:nth-child(even) {
+  top: -60px;
+}
+
+.project:nth-child(odd) {
+  top: 60px;
+}
+
+.project img {
+  align-self: center;
+  width: 80%;
+  margin-top: 8px;
+  object-fit: scale-down;
+}
+
+.project > hr {
+  height: 1px;
+  width: 100%;
+  border: none;
+  background-color: var(--text);
+}
+
+.project-content {
+  min-height: 175px;
+}
+
+.project-content > h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-content > h2,
+.project-content > p,
+.project-content > .tag-list {
+  padding: 0.25rem 1rem;
+}
+
+.project-content > .tag-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-content > .externals {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.25rem;
+}
