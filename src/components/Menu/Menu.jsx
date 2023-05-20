@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs';
+import { HiArrowLeft } from 'react-icons/hi';
 import './styles.css';
 
 function Menu() {
@@ -10,16 +11,19 @@ function Menu() {
   };
   return (
     <menu className={`${active ? 'active' : 'hidden'}`}>
-      <button className="menu" type="button" onClick={handleClick}>
-        <AiOutlineMenu className="icon" />
+      <button
+        className={`menu-btn ${active ? 'active' : 'hidden'}`}
+        type="button"
+        onClick={handleClick}
+      >
+        {active && <HiArrowLeft className="icon" />}
+        {!active && <AiOutlineMenu className="icon" />}
       </button>
-      <div className={`nav links ${active ? 'active' : 'hidden'}`}>
-        <ul>
-          <li>About</li>
-          <li>Portfolio</li>
-          <li>Contact</li>
-        </ul>
-      </div>
+      <nav className={`nav links ${active ? 'active' : 'hidden'}`}>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <div className="media links">
         <BsLinkedin className="icon" />
         <BsTwitter className="icon" />

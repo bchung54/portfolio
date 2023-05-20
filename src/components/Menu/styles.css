@@ -28,15 +28,45 @@ menu .icon {
   color: var(--slate-blue);
 }
 
-.menu {
+.menu-btn {
+  align-self: flex-end;
+  padding: 0 27.5%;
   color: var(--accent);
   font-size: 2rem;
+  transition: padding 1.5s ease-out;
+}
+
+.menu-btn:hover {
+  cursor: pointer;
+}
+
+.menu-btn.active {
+  padding: 0 1rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 2rem;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+nav.hidden {
+  opacity: 0;
+}
+
+nav > a {
+  display: flex;
+  padding: 1rem 0.5rem;
+}
+
+nav > a:hover {
+  background-color: var(--accent);
+  color: var(--background);
 }
 
 .media {
   font-size: 1.25rem;
-}
-
-.nav.hidden {
-  display: none;
 }
