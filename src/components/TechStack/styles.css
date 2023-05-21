@@ -1,0 +1,17 @@
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-left: 2px solid var(--primary);
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 565px) {
+  .tech-stack {
+    display: none;
+  }
+}
+
+.tech-stack .icon {
+  display: flex;
+  justify-content: center;
+}

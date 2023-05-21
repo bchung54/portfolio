@@ -32,6 +32,10 @@ button {
   background-color: inherit;
 }
 
+p {
+  max-width: 50ch;
+}
+
 a {
   display: inline-block;
   color: inherit;
@@ -78,6 +82,40 @@ header {
   padding: 1.5rem 2rem;
 }
 
+.menu-btn-top {
+  display: none;
+}
+
+@media screen and (max-width: 824px) {
+  header {
+    justify-content: space-between;
+    padding: 1rem 4.5rem;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .menu-btn-top {
+    position: relative;
+    display: inline;
+    color: var(--text);
+    font-size: 1.75rem;
+  }
+
+  .menu-btn-top:hover {
+    cursor: pointer;
+  }
+
+  .menu-btn-top > .icon {
+    vertical-align: text-bottom;
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -87,6 +125,12 @@ main {
 section {
   width: calc(100% - 10rem);
   padding: 5rem;
+}
+
+@media screen and (max-width: 565px) {
+  section {
+    padding: 20% 0;
+  }
 }
 
 hr {
@@ -114,30 +158,19 @@ main a {
 
 .copy {
   flex: 2;
+  margin-right: 5%;
 }
 
-.copy > p {
-  max-width: 50ch;
+.tech-stack {
+  flex: 1;
 }
+
 .copy a {
   text-decoration: underline;
 }
 
 .copy a:hover {
   color: var(--accent);
-}
-
-.tech-stack {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  flex: 1;
-  border-left: 2px solid var(--primary);
-  font-size: 4rem;
-}
-
-.tech-stack .icon {
-  display: flex;
-  justify-content: center;
 }
 
 .project-list {
@@ -150,27 +183,103 @@ main a {
   width: 48%;
 }
 
+@media screen and (max-width: 1028px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-list > * {
+    width: 100%;
+  }
+}
+
 #contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 65%;
   background-color: var(--text);
   color: var(--background);
 }
 
+#contact > p {
+  text-align: center;
+}
+
 #contact > form {
   display: flex;
+  gap: 5%;
+  width: 80%;
+}
+
+@media screen and (max-width: 824px) {
+  #contact > form {
+    flex-direction: column;
+    gap: 1em;
+  }
 }
 
 #contact > form > * {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-#contact > form input[type="submit"] {
-  background-color: var(--secondary);
-  color: var(--background);
+#contact > form > .col-1 {
+  gap: 1em;
+}
+
+#contact label {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact textarea,
+#contact input {
+  margin-top: 0.25rem;
+  border: 1px solid var(--background);
+  border-radius: 0.25em;
+  padding-left: 0.5em;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 300;
+}
+
+#contact textarea:focus,
+#contact input:focus {
+  outline: var(--accent) auto 1px;
+}
+
+#contact input {
+  height: 2rem;
+}
+
+#contact textarea {
+  min-height: 6.5rem;
+  resize: none;
+}
+
+#contact input[type="submit"] {
+  align-self: flex-end;
+  width: 45%;
+  border: 1px solid var(--text);
+  background-color: var(--background);
+  color: var(--text);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 824px) {
+  #contact input[type="submit"] {
+    align-self: flex-start;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  #contact input[type="submit"] {
+    width: 100%;
+  }
 }
 
 footer {

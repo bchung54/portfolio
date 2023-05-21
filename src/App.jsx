@@ -1,34 +1,23 @@
 import { Menu } from 'components/Menu';
+import { Header } from 'components/Header';
+import { TechStack } from 'components/TechStack';
 import { ProjectCard } from 'components/ProjectCard';
-import Image from 'assets/img/pexels-tim-gouw-donut.jpg';
+import donutImg from 'assets/img/pexels-tim-gouw-donut.jpg';
+import gameImg from 'assets/img/tic-tac-toe.png';
+import todoImg from 'assets/img/todo.png';
+import weatherImg from 'assets/img/weather.png';
 import { AiOutlineCaretUp } from 'react-icons/ai';
-import {
-  DiCss3,
-  DiGit,
-  DiHtml5,
-  DiJavascript1,
-  DiLinux,
-  DiNodejs,
-  DiNpm,
-  DiPython,
-  DiReact,
-} from 'react-icons/di';
-import { IoLogoFirebase } from 'react-icons/io5';
-import { SiJest, SiReactrouter, SiWebpack } from 'react-icons/si';
-import { TbBrandVscode } from 'react-icons/tb';
 import './App.css';
 
 function App() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Menu />
       <div id="top" className="page">
-        <header>
-          <div className="logo">Brian Chung</div>
-          <div className="contact">
-            <a href="#contact">Contact</a>
-          </div>
-        </header>
+        <Header />
         <main>
           <section id="about">
             <div className="copy">
@@ -48,50 +37,7 @@ function App() {
                 React.
               </p>
             </div>
-            <div className="tech-stack">
-              <div className="icon">
-                <DiHtml5 />
-              </div>
-              <div className="icon">
-                <DiCss3 />
-              </div>
-              <div className="icon">
-                <DiGit />
-              </div>
-              <div className="icon">
-                <DiJavascript1 />
-              </div>
-              <div className="icon">
-                <DiLinux />
-              </div>
-              <div className="icon">
-                <DiNodejs />
-              </div>
-              <div className="icon">
-                <DiNpm />
-              </div>
-              <div className="icon">
-                <DiPython />
-              </div>
-              <div className="icon">
-                <DiReact />
-              </div>
-              <div className="icon">
-                <IoLogoFirebase />
-              </div>
-              <div className="icon">
-                <SiJest />
-              </div>
-              <div className="icon">
-                <SiReactrouter />
-              </div>
-              <div className="icon">
-                <SiWebpack />
-              </div>
-              <div className="icon">
-                <TbBrandVscode />
-              </div>
-            </div>
+            <TechStack />
           </section>
           <hr />
           <section id="portfolio">
@@ -101,25 +47,40 @@ function App() {
             </p>
             <div className="project-list">
               <ProjectCard
+                title="Tic-Tac-Toe"
+                desc="Simple game of tic tac toe. Play against a bot or a friend with this nostalgic title."
+                imgNode={<img src={gameImg} alt="game screenshot" />}
+                repoURL="https://github.com/bchung54/tic-tac-toe"
+                demoURL="https://bchung54.github.io/tic-tac-toe/"
+                tags={[
+                  'HTML',
+                  'CSS',
+                  'JavaScript',
+                  'Algorithms',
+                  'Module Pattern',
+                ]}
+              />
+              <ProjectCard
                 title="Reddit-ish"
                 desc="Social media site"
-                imgNode={<img src={Image} alt="donut" />}
+                imgNode={<img src={donutImg} alt="donut" />}
                 tags={['web', 'design', 'tag']}
               />
               <ProjectCard
-                title="Reddit-ish"
-                desc="Social media site"
-                imgNode={<img src={Image} alt="donut" />}
+                title="Tododile"
+                desc="A themed to-do to keep track of tasks and filter them by due date"
+                imgNode={<img src={todoImg} alt="todo screenshot" />}
+                repoURL="https://github.com/bchung54/todo-list"
+                demoURL="https://bchung54.github.io/todo-list/"
+                tags={['HTML', 'CSS', 'JavaScript', 'ES6', 'Webpack']}
               />
               <ProjectCard
-                title="Reddit-ish"
-                desc="Social media site"
-                imgNode={<img src={Image} alt="donut" />}
-              />
-              <ProjectCard
-                title="Reddit-ish"
-                desc="Social media site"
-                imgNode={<img src={Image} alt="donut" />}
+                title="Weather App"
+                desc="Simple weather app that displays current weather info for a given city"
+                imgNode={<img src={weatherImg} alt="weather screenshot" />}
+                repoURL="https://github.com/bchung54/weather-app"
+                demoURL="https://bchung54.github.io/weather-app/"
+                tags={['HTML', 'CSS', 'JavaScript', 'Webpack', 'API', 'Async']}
               />
             </div>
           </section>
@@ -130,13 +91,22 @@ function App() {
               Get in touch via email. Feel free to ask any questions or just
               drop a message to say hello. :)
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="col-1">
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
+                <label htmlFor="guest-name">
+                  Name*
+                  <input id="guest-name" type="text" required />
+                </label>
+                <label htmlFor="guest-email">
+                  Email*
+                  <input id="guest-email" type="email" required />
+                </label>
               </div>
               <div className="col-2">
-                <textarea placeholder="Message" />
+                <label htmlFor="guest-msg">
+                  Message*
+                  <textarea id="guest-msg" required />
+                </label>
                 <input type="submit" value="Send Email" />
               </div>
             </form>

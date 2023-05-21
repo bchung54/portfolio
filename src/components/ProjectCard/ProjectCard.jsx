@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
 import './styles.css';
 
-function ProjectCard({ title, desc, imgNode, tags }) {
+function ProjectCard({ title, desc, imgNode, repoURL, demoURL, tags }) {
   return (
     <div className="project">
       {imgNode}
@@ -21,8 +21,12 @@ function ProjectCard({ title, desc, imgNode, tags }) {
           })}
         </div>
         <div className="externals">
-          <BsGithub className="icon" />
-          <BsBoxArrowUpRight className="icon" />
+          <a href={repoURL}>
+            <BsGithub className="icon" />
+          </a>
+          <a href={demoURL} target="_blank" rel="noreferrer noopener">
+            <BsBoxArrowUpRight className="icon" />
+          </a>
         </div>
       </div>
     </div>
@@ -33,6 +37,8 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   imgNode: PropTypes.node.isRequired,
+  repoURL: PropTypes.string.isRequired,
+  demoURL: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
 };
 

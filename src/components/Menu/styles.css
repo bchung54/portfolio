@@ -5,17 +5,21 @@ menu {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 2.5rem);
-  width: 5%;
-  max-width: 4.5em;
+  height: calc(100vh - 1rem);
+  width: 3rem;
   border-right: 2px solid var(--text);
-  padding: 1.25rem 0;
+  padding: 0.5rem 0;
   transition: width 1s ease-in-out, max-width 1s ease-in-out;
 }
 
+@media screen and (max-width: 824px) {
+  menu {
+    display: none;
+  }
+}
+
 menu.active {
-  width: 15.5rem;
-  max-width: 15.5rem;
+  width: 12rem;
 }
 
 menu > .media {
@@ -29,42 +33,52 @@ menu .icon {
 }
 
 .menu-btn {
+  position: relative;
   align-self: flex-end;
-  padding: 0 27.5%;
   color: var(--accent);
+  margin-right: 0.125rem;
   font-size: 2rem;
-  transition: padding 1.5s ease-out;
+  transition: width 1s ease;
+}
+
+.menu-btn.active {
+  align-self: flex-end;
 }
 
 .menu-btn:hover {
   cursor: pointer;
 }
 
-.menu-btn.active {
-  padding: 0 1rem;
-}
-
-nav {
+menu > nav {
+  position: relative;
+  top: -25%;
+  right: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  font-size: 2rem;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-nav.hidden {
-  opacity: 0;
+  align-self: flex-end;
+  font-size: 1rem;
 }
 
 nav > a {
   display: flex;
   padding: 1rem 0.5rem;
+  transition: translate 0.25s ease;
 }
 
-nav > a:hover {
-  background-color: var(--accent);
-  color: var(--background);
+menu > nav > a::before {
+  content: "\2014";
+  margin-right: 4px;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+menu > nav > a:hover {
+  font-weight: 700;
+  translate: 16px;
+}
+
+menu > nav > a:hover::before {
+  transform: scale(1);
 }
 
 .media {
