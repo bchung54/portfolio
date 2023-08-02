@@ -32,7 +32,7 @@ menu .icon {
   color: var(--slate-blue);
 }
 
-.menu-btn {
+#menu-btn {
   position: relative;
   align-self: flex-end;
   color: var(--accent);
@@ -41,11 +41,11 @@ menu .icon {
   transition: width 1s ease;
 }
 
-.menu-btn.active {
+#menu-btn.active {
   align-self: flex-end;
 }
 
-.menu-btn:hover {
+#menu-btn:hover {
   cursor: pointer;
 }
 

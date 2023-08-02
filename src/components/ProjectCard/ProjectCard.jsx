@@ -21,10 +21,20 @@ function ProjectCard({ title, desc, imgNode, repoURL, demoURL, tags }) {
           })}
         </div>
         <div className="externals">
-          <a href={repoURL}>
+          <a
+            href={repoURL}
+            aria-label="Github Repo"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <BsGithub className="icon" />
           </a>
-          <a href={demoURL} target="_blank" rel="noreferrer noopener">
+          <a
+            href={demoURL}
+            aria-label="External Site"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <BsBoxArrowUpRight className="icon" />
           </a>
         </div>

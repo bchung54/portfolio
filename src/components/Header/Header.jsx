@@ -35,7 +35,8 @@ function Header() {
         <a href="#contact">Contact</a>
       </div>
       <button
-        className="menu-btn-top"
+        id="menu-btn-top"
+        aria-label="Menu"
         onClick={handleClick}
         ref={menuBtnRef}
         type="button"

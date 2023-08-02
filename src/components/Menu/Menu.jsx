@@ -12,7 +12,9 @@ function Menu() {
   return (
     <menu className={`${active ? 'active' : 'hidden'}`}>
       <button
-        className={`menu-btn ${active ? 'active' : 'hidden'}`}
+        id="menu-btn-side"
+        className={`${active ? 'active' : 'hidden'}`}
+        aria-label="Menu"
         type="button"
         onClick={handleClick}
       >
