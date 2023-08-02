@@ -23,7 +23,7 @@ function ProjectCard({ title, desc, imgNode, repoURL, demoURL, tags }) {
         <div className="externals">
           <a
             href={repoURL}
-            aria-label="Github Repo"
+            aria-label="Github"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -31,7 +31,7 @@ function ProjectCard({ title, desc, imgNode, repoURL, demoURL, tags }) {
           </a>
           <a
             href={demoURL}
-            aria-label="External Site"
+            aria-label="External"
             target="_blank"
             rel="noreferrer noopener"
           >

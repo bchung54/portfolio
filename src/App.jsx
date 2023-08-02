@@ -113,7 +113,7 @@ function App() {
           </section>
         </main>
         <footer>
-          <a className="top" href="#top">
+          <a className="top" aria-label="top" href="#top">
             <AiOutlineCaretUp className="icon" />
           </a>
           &copy; 2023 Brian Chung
